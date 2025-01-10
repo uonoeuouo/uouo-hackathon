@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "uouo-hackathon",
+    "slug": "uouo-hackathon",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.uonoe.uouohackathon"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.uonoe.uouohackathon"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +38,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ca170990-43e1-4434-a996-a8022a10bc99"
+      }
+    },
+    "owner": "uonoe",
+    "updates": {
+      "url": "https://u.expo.dev/ca170990-43e1-4434-a996-a8022a10bc99"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
