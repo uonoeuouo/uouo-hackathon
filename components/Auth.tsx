@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import "@/global.css";
+import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { Alert, StyleSheet, View, AppState } from 'react-native'
 import { supabase } from '../lib/supabase'
 import { Button, Input } from '@rneui/themed'
@@ -47,48 +49,64 @@ export default function Auth() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Input
-          label="Email"
-          leftIcon={{ type: 'font-awesome', name: 'envelope', color: '#517fa4', containerStyle: styles.icon }}
-          onChangeText={(text) => setEmail(text)}
-          value={email}
-          placeholder="email@address.com"
-          autoCapitalize={'none'}
-          inputStyle={styles.input}
-        />
-      </View>
-      <View style={styles.verticallySpaced}>
-        <Input
-          label="パスワード"
-          leftIcon={{ type: 'font-awesome', name: 'lock', color: '#517fa4', containerStyle: styles.icon }}
-          onChangeText={(text) => setPassword(text)}
-          value={password}
-          secureTextEntry={true}
-          placeholder="Password"
-          autoCapitalize={'none'}
-          inputStyle={styles.input}
-        />
-      </View>
-      <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Button
-          title="ログイン"
-          disabled={loading}
-          onPress={() => signInWithEmail()}
-          buttonStyle={styles.button}
-        />
-      </View>
-      <View style={styles.verticallySpaced}>
-        <Button
-          title="サインアップ"
-          disabled={loading}
-          onPress={() => signUpWithEmail()}
-          buttonStyle={styles.button}
-        />
-      </View>
-    </View>
-  )
+    <GluestackUIProvider
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"
+      mode="light"><View style={styles.container}>
+                <View style={[styles.verticallySpaced, styles.mt20]}>
+                  <Input
+                    label="Email"
+                    leftIcon={{ type: 'font-awesome', name: 'envelope', color: '#517fa4', containerStyle: styles.icon }}
+                    onChangeText={(text) => setEmail(text)}
+                    value={email}
+                    placeholder="email@address.com"
+                    autoCapitalize={'none'}
+                    inputStyle={styles.input}
+                  />
+                </View>
+                <View style={styles.verticallySpaced}>
+                  <Input
+                    label="パスワード"
+                    leftIcon={{ type: 'font-awesome', name: 'lock', color: '#517fa4', containerStyle: styles.icon }}
+                    onChangeText={(text) => setPassword(text)}
+                    value={password}
+                    secureTextEntry={true}
+                    placeholder="Password"
+                    autoCapitalize={'none'}
+                    inputStyle={styles.input}
+                  />
+                </View>
+                <View style={[styles.verticallySpaced, styles.mt20]}>
+                  <Button
+                    title="ログイン"
+                    disabled={loading}
+                    onPress={() => signInWithEmail()}
+                    buttonStyle={styles.button}
+                  />
+                </View>
+                <View style={styles.verticallySpaced}>
+                  <Button
+                    title="サインアップ"
+                    disabled={loading}
+                    onPress={() => signUpWithEmail()}
+                    buttonStyle={styles.button}
+                  />
+                </View>
+              </View></GluestackUIProvider>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -1,4 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import "@/global.css";
+import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = "https://sqymgznimbsguzbpraen.supabase.co"
