@@ -61,7 +61,7 @@ export default function Auth() {
       </View>
       <View style={styles.verticallySpaced}>
         <Input
-          label="Password"
+          label="パスワード"
           leftIcon={{ type: 'font-awesome', name: 'lock', color: '#517fa4', containerStyle: styles.icon }}
           onChangeText={(text) => setPassword(text)}
           value={password}
@@ -73,7 +73,7 @@ export default function Auth() {
       </View>
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <Button
-          title="Sign in"
+          title="ログイン"
           disabled={loading}
           onPress={() => signInWithEmail()}
           buttonStyle={styles.button}
@@ -81,7 +81,7 @@ export default function Auth() {
       </View>
       <View style={styles.verticallySpaced}>
         <Button
-          title="Sign up"
+          title="サインアップ"
           disabled={loading}
           onPress={() => signUpWithEmail()}
           buttonStyle={styles.button}
