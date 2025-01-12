@@ -80,25 +80,48 @@ export default function Account({ session }: { session: Session }) {
   return (
     <View style={styles.container}>
       <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Input label="Email" value={session?.user?.email} disabled />
+        <Input
+          label="Email"
+          value={session?.user?.email}
+          disabled
+          leftIcon={{ type: 'font-awesome', name: 'envelope', color: '#517fa4', containerStyle: styles.icon }}
+          inputStyle={styles.input}
+        />
       </View>
       <View style={styles.verticallySpaced}>
-        <Input label="Username" value={username || ''} onChangeText={(text) => setUsername(text)} />
+        <Input
+          label="ユーザー名"
+          value={username || ''}
+          onChangeText={(text) => setUsername(text)}
+          leftIcon={{ type: 'font-awesome', name: 'user', color: '#517fa4', containerStyle: styles.icon }}
+          inputStyle={styles.input}
+        />
       </View>
       <View style={styles.verticallySpaced}>
-        <Input label="Website" value={website || ''} onChangeText={(text) => setWebsite(text)} />
+        <Input
+          label="Webサイト"
+          value={website || ''}
+          onChangeText={(text) => setWebsite(text)}
+          leftIcon={{ type: 'font-awesome', name: 'globe', color: '#517fa4', containerStyle: styles.icon }}
+          inputStyle={styles.input}
+        />
       </View>
 
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <Button
-          title={loading ? 'Loading ...' : 'Update'}
+          title={loading ? '更新中' : '更新'}
           onPress={() => updateProfile({ username, website, avatar_url: avatarUrl })}
           disabled={loading}
+          buttonStyle={styles.button}
         />
       </View>
 
       <View style={styles.verticallySpaced}>
-        <Button title="Sign Out" onPress={() => supabase.auth.signOut()} />
+        <Button
+          title="サインアウト"
+          onPress={() => supabase.auth.signOut()}
+          buttonStyle={styles.button}
+        />
       </View>
     </View>
   )
@@ -108,6 +131,8 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 40,
     padding: 12,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 10,
   },
   verticallySpaced: {
     paddingTop: 4,
@@ -116,5 +141,15 @@ const styles = StyleSheet.create({
   },
   mt20: {
     marginTop: 20,
+  },
+  input: {
+    color: '#333',
+  },
+  button: {
+    backgroundColor: '#517fa4',
+    borderRadius: 5,
+  },
+  icon: {
+    marginRight: 10,
   },
 })
