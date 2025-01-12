@@ -51,29 +51,41 @@ export default function Auth() {
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <Input
           label="Email"
-          leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+          leftIcon={{ type: 'font-awesome', name: 'envelope', color: '#517fa4', containerStyle: styles.icon }}
           onChangeText={(text) => setEmail(text)}
           value={email}
           placeholder="email@address.com"
           autoCapitalize={'none'}
+          inputStyle={styles.input}
         />
       </View>
       <View style={styles.verticallySpaced}>
         <Input
           label="Password"
-          leftIcon={{ type: 'font-awesome', name: 'lock' }}
+          leftIcon={{ type: 'font-awesome', name: 'lock', color: '#517fa4', containerStyle: styles.icon }}
           onChangeText={(text) => setPassword(text)}
           value={password}
           secureTextEntry={true}
           placeholder="Password"
           autoCapitalize={'none'}
+          inputStyle={styles.input}
         />
       </View>
       <View style={[styles.verticallySpaced, styles.mt20]}>
-        <Button title="Sign in" disabled={loading} onPress={() => signInWithEmail()} />
+        <Button
+          title="Sign in"
+          disabled={loading}
+          onPress={() => signInWithEmail()}
+          buttonStyle={styles.button}
+        />
       </View>
       <View style={styles.verticallySpaced}>
-        <Button title="Sign up" disabled={loading} onPress={() => signUpWithEmail()} />
+        <Button
+          title="Sign up"
+          disabled={loading}
+          onPress={() => signUpWithEmail()}
+          buttonStyle={styles.button}
+        />
       </View>
     </View>
   )
@@ -83,6 +95,8 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 40,
     padding: 12,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 10,
   },
   verticallySpaced: {
     paddingTop: 4,
@@ -91,5 +105,15 @@ const styles = StyleSheet.create({
   },
   mt20: {
     marginTop: 20,
+  },
+  input: {
+    color: '#333',
+  },
+  button: {
+    backgroundColor: '#517fa4',
+    borderRadius: 5,
+  },
+  icon: {
+    marginRight: 10,
   },
 })
