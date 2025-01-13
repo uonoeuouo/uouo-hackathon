@@ -6,5 +6,8 @@
   },
   "cSpell.words": [
     "supabase"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    ["tva\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ]
 }
