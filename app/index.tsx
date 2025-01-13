@@ -23,21 +23,6 @@ export default function App() {
 
   return (
     <GluestackUIProvider
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
-      mode="light"
       mode="light"><View>
                 {session && session.user ? <Test /> : <Auth />}
                 {/* {session && session.user ? <Account key={session.user.id} session={session} /> : <Auth />} */}
